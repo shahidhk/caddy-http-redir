@@ -1,0 +1,9 @@
+:8080 {
+    redir 301 {
+        if {>X-Forwarded-Proto} is http
+        /  https://{$DOMAIN}{uri}
+    }
+    proxy / graphql-engine:8080 {
+        websocket
+    }
+}
