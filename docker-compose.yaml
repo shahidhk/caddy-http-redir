@@ -25,7 +25,8 @@ services:
     depends_on:
     - "graphql-engine"
     environment:
-      DOMAIN: ph-test.hasura.me
+      EXTERNAL_DOMAIN: ph-test.hasura.me
+      GRAPHQL_ENGINE_ADDRESS: graphql-engine:8080
     restart: always
     ports:
     - "8080:8080"
