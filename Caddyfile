@@ -1,7 +1,7 @@
 :8080 {
     redir 301 {
         if {>X-Forwarded-Proto} is http
-        /  https://{$EXTENAL_DOMAIN}{uri}
+        /  https://{$EXTERNAL_DOMAIN}{uri}
     }
     proxy / {$GRAPHQL_ENGINE_ADDRESS} {
         websocket
